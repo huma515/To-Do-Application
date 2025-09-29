@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.container {
+    width: 30%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    
+}
+
+#userInp {
+
+    margin-top: 20px;
+    height: 50px;
+    padding: 20px;
+    border-radius: 0px 20px 0px 20px;
+    border: none;
+    outline: none;
+
+
+}
+
+#btn, #btan {
+
+    padding: 10px 10px;
+    font-size: 18px;
+    border-radius: 0px 20px 0px 20px;
+    border: none;
+    outline: none;
+    background-color: #2575fc;
+    color: white;
+    font-weight: bold;
+
+}
+
+#btn:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+}
+#btan:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+}
+
+.todos li {
+
+    display: flex;
+    justify-content: space-between;
+    /* text left, button right */
+    align-items: center;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 16px;
+
+
+}
+
+.btun {
+
+    color: white;
+    background: #6a11cb;
+    outline: none;
+    border: 1px solid white;
+    padding: 15px;
+    border-radius: 50%;
+}
+.btns{
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    #userInp, #btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+    .btun {
+        padding: 8px;
+    }
+}
