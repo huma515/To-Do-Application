@@ -25,6 +25,24 @@ body {
     
     
 }
+#userList {
+    flex: 1;
+    margin: 15px 0;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* scroll bar style */
+#userList::-webkit-scrollbar {
+    width: 6px;
+}
+#userList::-webkit-scrollbar-thumb {
+    background: #6a11cb;
+    border-radius: 10px;
+}
+#userList::-webkit-scrollbar-track {
+    background: transparent;
+}
 
 #userInp {
 
@@ -61,7 +79,7 @@ body {
 .todos li {
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     /* text left, button right */
     align-items: center;
     margin-bottom: 10px;
@@ -71,13 +89,18 @@ body {
 
 }
 
+.todos li button{
+
+align-self: self-end;
+
+}
 .btun {
 
     color: white;
     background: #6a11cb;
     outline: none;
     border: 1px solid white;
-    padding: 15px;
+    padding: 10px;
     border-radius: 50%;
 }
 .btns{
@@ -87,6 +110,33 @@ body {
     flex-direction: column;
     gap: 5px;
 }
+
+.edit{
+    
+    color: white;
+    background: #6a11cb;
+    outline: none;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 50%;
+
+
+}
+
+.todos li {
+    display: flex;
+    justify-content: space-between;  /* text left, buttons right */
+    align-items: center;             /* vertically center */
+    margin-bottom: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.todos li .actions {
+    display: flex;
+    gap: 10px; /* edit aur delete ke beech thoda gap */
+}
+
 @media (max-width: 600px) {
     body {
         font-size: 14px;

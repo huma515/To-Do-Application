@@ -13,7 +13,11 @@ btn.addEventListener("click" , function(){
     }
 
     
-   ul.innerHTML+= `<li>${ userInp.value} <button class="btun" onclick="dlt(this)"><i class="fa-solid fa-trash"></i></button></li>`
+   ul.innerHTML+= `<li>${ userInp.value} <div class="action">
+   <button class="edit"  onclick="editText(this)"><i class="fa-solid fa-pen-to-square"></i></button> 
+   <button class="btun" onclick="dlt(this)"><i class="fa-solid fa-trash"></i></button>
+   </div>
+    </li>`
    ul.className= "todos"
 
  
@@ -30,21 +34,48 @@ Swal.fire({
 
 
  }
-
-
-
-
-
-
 userInp.value=""
 })
+
+//dlt function
 function dlt(btun){
-btun.parentElement.remove()
+btun.parentElement.parentElement.remove()
  }
 
+ //dlt all function
  function dltAll(){
 
 ul.remove()
 
 
  }
+
+ //edit function
+
+
+function editText(editBtn) {
+  let li = editBtn.parentElement.parentElement;   
+  let taskText = li.firstChild.textContent.trim(); 
+
+  userInp.value = taskText;
+
+  editBtn.innerHTML = "<i class='fa-solid fa-floppy-disk'></i>";
+
+  editBtn.onclick = function () {
+    li.firstChild.textContent = userInp.value + " "; 
+    userInp.value = ""; 
+
+    editBtn.innerHTML = "<i class='fa-solid fa-pen-to-square'></i>";
+    editBtn.setAttribute("onclick", "editText(this)");
+  };
+}
+
+document.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    btn.click();
+  }
+});
+
+
+
+ 
